@@ -1,4 +1,18 @@
+<p align="center"><img src="https://jarrunner.github.io/jr-icon.svg" width="96" alt="jr"></p>
+
 # teavm-c-maven-plugin
+
+Turn Java into native executables from `mvn package`: this plugin compiles the C that [TeaVM](https://teavm.org) generates, once per target, with the compiler you name. No build scripts.
+
+- **Several targets in one build:** Windows x64 and ARM64 with llvm-mingw, Linux and macOS with `zig cc` or clang.
+- **Each compiler's full output** goes to `target/teavmc-<id>.log`, so a failed target is easy to read.
+- **Proven on a real program:** [jr](https://github.com/jarrunner/jr), a native launcher written in Java, ships for Windows and macOS from this plugin.
+
+**Try it:** add the plugin block under [Usage](#usage) after TeaVM's own `teavm-maven-plugin` and run `mvn package`. A complete setup is jr's [`pom.xml`](https://github.com/jarrunner/jr/blob/main/pom.xml).
+
+[Usage](#usage) · [jr](https://github.com/jarrunner/jr) · [teavm-native-check](https://github.com/jarrunner/teavm-native-check) · [jarrunner.github.io](https://jarrunner.github.io)
+
+## What it does
 
 Compiles the C that [TeaVM](https://teavm.org)'s C backend generates into native executables, one per target, as part of `mvn package`. No build scripts.
 
